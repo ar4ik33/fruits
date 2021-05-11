@@ -1,7 +1,7 @@
 import telebot
 import detect
 
-bot = telebot.TeleBot('1761476605:AAFg4THBdwKg2cz3bGMUg9U-8kpEmsPEZd4')
+bot = telebot.TeleBot() #your verification code
 
 @bot.message_handler(content_types=['photo'])
 def handle(message):
