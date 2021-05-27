@@ -1,5 +1,6 @@
 import telebot
 import detect
+import pathlib
 
 bot = telebot.TeleBot() #your verification code
 
@@ -21,6 +22,8 @@ def handle(message):
     'name': 'exp', 'exist_ok': False}
     detect.detect(opt)
     bot.send_photo(message.chat.id, open('runs\detect\exp\\' + message.photo[1].file_id + '.jpg', 'rb'))
+    file_to_rem = pathlib.Path(src)
+    file_to_rem.unlink()
     #bot.reply_to(message, "Фото добавлено")
 
     #bot.send_photo(message.chat.id, open(r'C:\home\artem_kug\image', 'rb'))
