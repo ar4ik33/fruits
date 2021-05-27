@@ -11,7 +11,7 @@ def handle(message):
     file_info = bot.get_file(message.photo[len(message.photo) - 1].file_id)
 
     downloaded_file = bot.download_file(file_info.file_path)
-    src = r'C:\home\artem_kug\freshness\images\\' + message.photo[1].file_id + '.jpg'
+    src = r'C:\home\artem_kug\freshness\images\\' + message.photo[1].file_id + '.jpg' # add your own path
     with open(src, 'wb') as new_file:
         new_file.write(downloaded_file)
     opt = {'weights': 'runs/train/exp/new.pt', 'source': 'images', 'img_size': 640,
